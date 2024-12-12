@@ -2,7 +2,7 @@
 
 using System.Security.Cryptography;
 
-namespace ConsoleApp6;
+namespace NumberGuessing;
 //test
 
 public class Program
