@@ -10,7 +10,7 @@ public class Program
 
     static void Main(string[] args)
     {
-                
+
         Console.WriteLine("This exercise is about number guessing");
         Console.WriteLine(("Please enter a number between 0-10:"));
 
@@ -18,19 +18,14 @@ public class Program
         int number = Convert.ToInt32(Console.ReadLine());
 
         Console.WriteLine($"You have entered: {number}");
-                
+
         Random rng = new Random();
         int randomNumber = rng.Next(0, 10);
         bool playAgain = true;
-        int guesses;
+        int guesses = 5;
         string response;
 
-        while (playAgain)
-        {
-            guesses = 0;
-            response = "";
-        }
-
+        
         if (number == randomNumber)
         {
             Console.WriteLine("You guessed the correct number");
@@ -42,24 +37,27 @@ public class Program
         else if (number > randomNumber)
         {
             Console.WriteLine("Your number is too high");
-                
-        }
-        Console.WriteLine($"The correct number is {randomNumber}");
-        
-        
-        
-        
-        
-        Console.WriteLine("Would you like to play again (Y/N");
-        response = Console.ReadLine();
 
+        }
+
+        Console.WriteLine($"The correct number is {randomNumber}");
+
+
+        Console.WriteLine("Would you like to play again (Y/N)");
+        response = Console.ReadLine();
+        response = response.ToUpper();
+
+        if (response == "Y")
+        {
+            playAgain = true;
+        }
+        else
+        {
+            playAgain = false;
+        }
+
+        Console.WriteLine("Thank you for playing");
 
     }
-        
-    
-                
-       
-
-
 
 }
