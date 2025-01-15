@@ -21,7 +21,15 @@ public class Program
                 
         Random rng = new Random();
         int randomNumber = rng.Next(0, 10);
-                
+        bool playAgain = true;
+        int guesses;
+        string response;
+
+        while (playAgain)
+        {
+            guesses = 0;
+            response = "";
+        }
 
         if (number == randomNumber)
         {
@@ -37,6 +45,15 @@ public class Program
                 
         }
         Console.WriteLine($"The correct number is {randomNumber}");
+        
+        
+        
+        
+        
+        Console.WriteLine("Would you like to play again (Y/N");
+        response = Console.ReadLine();
+
+
     }
         
     
