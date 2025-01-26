@@ -22,8 +22,10 @@ public class Program
         Random rng = new Random();
         int randomNumber = rng.Next(0, 10);
         bool playAgain = true;
-        int guesses = 5;
+        const int allowedTries = 5;
+        const int numberOfTries = 0;
         string response;
+        
 
         
         if (number == randomNumber)
@@ -39,9 +41,14 @@ public class Program
             Console.WriteLine("Your number is too high");
 
         }
+        
+        if (numberOfTries == allowedTries)
+        {
+            Console.WriteLine($"The number was: {randomNumber}");
+            playAgain = false;
+        }
 
         Console.WriteLine($"The correct number is {randomNumber}");
-
 
         Console.WriteLine("Would you like to play again (Y/N)");
         response = Console.ReadLine();
