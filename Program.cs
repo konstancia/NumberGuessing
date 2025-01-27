@@ -22,8 +22,8 @@ public class Program
         Random rng = new Random();
         int randomNumber = rng.Next(0, 10);
         bool playAgain = true;
-        const int allowedTries = 5;
-        const int numberOfTries = 0;
+        const int allowed_Tries = 5;
+        const int number_Of_Tries = 0;
         string response;
         
 
@@ -42,7 +42,7 @@ public class Program
 
         }
         
-        if (numberOfTries == allowedTries)
+        if (number_Of_Tries == allowed_Tries)
         {
             Console.WriteLine($"The number was: {randomNumber}");
             playAgain = false;
