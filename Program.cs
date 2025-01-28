@@ -22,49 +22,50 @@ public class Program
         Random rng = new Random();
         int randomNumber = rng.Next(0, 10);
         bool playAgain = true;
-        const int allowed_Tries = 5;
-        const int number_Of_Tries = 0;
         string response;
-        
 
-        
-        if (number == randomNumber)
+        for (int i = 1; i < 5; i++)
         {
-            Console.WriteLine("You guessed the correct number");
-        }
-        else if (number < randomNumber)
-        {
-            Console.WriteLine("Your number is too low");
-        }
-        else if (number > randomNumber)
-        {
-            Console.WriteLine("Your number is too high");
 
+            if (number == randomNumber)
+            {
+                Console.WriteLine("You guessed the correct number");
+            }
+            else if (number < randomNumber)
+            {
+                Console.WriteLine("Your number is too low");
+            }
+            else if (number > randomNumber)
+            {
+                Console.WriteLine("Your number is too high");
+
+            }
+
+
+            Console.WriteLine($"The correct number is {randomNumber}");
+
+            Console.WriteLine("Would you like to play again (Y/N)");
+            response = Console.ReadLine();
+            response = response.ToUpper();
+
+            if (response == "Y")
+            {
+                playAgain = true;
+            }
+            else
+            {
+                playAgain = false;
+            }
+
+            Console.WriteLine("Thank you for playing");
         }
-        
-        if (number_Of_Tries == allowed_Tries)
-        {
-            Console.WriteLine($"The number was: {randomNumber}");
-            playAgain = false;
-        }
-
-        Console.WriteLine($"The correct number is {randomNumber}");
-
-        Console.WriteLine("Would you like to play again (Y/N)");
-        response = Console.ReadLine();
-        response = response.ToUpper();
-
-        if (response == "Y")
-        {
-            playAgain = true;
-        }
-        else
-        {
-            playAgain = false;
-        }
-
-        Console.WriteLine("Thank you for playing");
-
     }
 
 }
+
+/* if (number_Of_Tries == allowed_Tries) ;
+{
+    Console.WriteLine($"The number was: {randomNumber}");
+    playAgain = false;
+}
+*/
