@@ -3,7 +3,7 @@
 using System.Security.Cryptography;
 
 namespace NumberGuessing;
-//test
+
 
 public class Program
 {
@@ -23,6 +23,7 @@ public class Program
         int randomNumber = rng.Next(0, 10);
         bool playAgain = true;
         string response;
+        int numberOfGuesses = 5;
 
         for (int i = 1; i < 5; i++) 
         {
@@ -31,6 +32,7 @@ public class Program
             {
                 Console.WriteLine("You guessed the correct number");
             }
+            
             else if (number < randomNumber)
             {
                 Console.WriteLine("Your number is too low");
@@ -41,26 +43,25 @@ public class Program
 
             }
 
-
             Console.WriteLine($"The correct number is {randomNumber}");
-
-            Console.WriteLine("Would you like to play again (Y/N)");
-            response = Console.ReadLine();
-            response = response.ToUpper();
-
-            if (response == "Y")
-            {
-                playAgain = true;
-            }
-            else
-            {
-                playAgain = false;
-            }
-
-            Console.WriteLine("Thank you for playing");
-        }
+            
     }
 
+        Console.WriteLine("Would you like to play again (Y/N)");
+        response = Console.ReadLine();
+        response = response.ToUpper();
+
+        if (response == "Y")
+        {
+            playAgain = true;
+        }
+        else
+        {
+            playAgain = false;
+        }
+
+        Console.WriteLine("Thank you for playing");
+    }
 }
 
 /* if (number_Of_Tries == allowed_Tries) ;
