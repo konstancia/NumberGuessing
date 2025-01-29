@@ -49,26 +49,30 @@ public class Program
 
             Console.WriteLine($"The correct number is {randomNumber}");
             isCorrectGuess = true;
+            
+            Console.WriteLine("Would you like to play again (Y/N)");
+            response = Console.ReadLine();
+            response = response.ToUpper();
+            
+            if (response == "Y")
+            {
+                playAgain = true;
+            }
+            else
+            {
+                playAgain = false;
+            }
+
+            Console.WriteLine("Thank you for playing");
         }
     }
-}
+        }
+    
 
-/*Console.WriteLine("Would you like to play again (Y/N)");
-    response = Console.ReadLine();
-    response = response.ToUpper();
 
-    if (response == "Y")
-    {
-        playAgain = true;
-    }
-    else
-    {
-        playAgain = false;
-    }
 
-    Console.WriteLine("Thank you for playing");
-}
-}
+
+    
 
 /* if (number_Of_Tries == allowed_Tries) ;
 {
