@@ -19,13 +19,14 @@ public class Program
         Random rng = new Random();
         int randomNumber = rng.Next(0, 10);
 
-       
-       
-            for (int i = 1; i <= numberOfGuesses; i++) 
-            {
-                
+
+
+        for (int i = 1; i <= numberOfGuesses; i++)
+        {
+
             Console.WriteLine("This exercise is about number guessing");
             Console.WriteLine(("Please enter a number between 0-10:"));
+            Console.WriteLine($"\nAttempt {i} of {numberOfGuesses}:");
 
             //convert number to int32
             int number = Convert.ToInt32(Console.ReadLine());
@@ -42,38 +43,41 @@ public class Program
                 Console.WriteLine("Your number is too high");
             }
             else if (number == randomNumber)
-                
-                Console.WriteLine("Your guess is correct");
-            {
-                Console.WriteLine("correct");
 
-            }
+                Console.WriteLine("Your guess is correct");
 
             Console.WriteLine($"The correct number is {randomNumber}");
-            
-            Console.WriteLine("Would you like to play again (Y/N)");
-            response = Console.ReadLine();
-            response = response.ToUpper();
-            
-            if (response == "Y")
-            {
-                playAgain = true;
-            }
-            else
-            {
-                playAgain = false;
-            }
 
-            Console.WriteLine("Thank you for playing");
         }
     }
-        }
-    
+
+}
+
+
+
+/* Console.WriteLine("Would you like to play again (Y/N)");
+ response = Console.ReadLine();
+ response = response.ToUpper();
+
+ if (response == "Y")
+ {
+     playAgain = true;
+ }
+ else
+ {
+     playAgain = false;
+ }
+
+ Console.WriteLine("Thank you for playing");
+}
+}
+}
 
 
 
 
-    
+
+
 
 /* if (number_Of_Tries == allowed_Tries) ;
 {
