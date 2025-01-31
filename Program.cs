@@ -21,7 +21,7 @@ public class Program
 
        
        
-            for (int i = 1; i < numberOfGuesses; i++) 
+            for (int i = 1; i <= numberOfGuesses; i++) 
             {
                 
             Console.WriteLine("This exercise is about number guessing");
@@ -41,7 +41,9 @@ public class Program
             {
                 Console.WriteLine("Your number is too high");
             }
-            else
+            else if (number == randomNumber)
+                
+                Console.WriteLine("Your guess is correct");
             {
                 Console.WriteLine("correct");
 
