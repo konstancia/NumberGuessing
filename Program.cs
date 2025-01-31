@@ -19,11 +19,11 @@ public class Program
         Random rng = new Random();
         int randomNumber = rng.Next(0, 10);
 
-        //for (int i = 1; i < 5; i++)
-         
-        while (!isCorrectGuess)
-        {
-            
+       
+       
+            for (int i = 1; i < numberOfGuesses; i++) 
+            {
+                
             Console.WriteLine("This exercise is about number guessing");
             Console.WriteLine(("Please enter a number between 0-10:"));
 
@@ -48,7 +48,6 @@ public class Program
             }
 
             Console.WriteLine($"The correct number is {randomNumber}");
-            isCorrectGuess = true;
             
             Console.WriteLine("Would you like to play again (Y/N)");
             response = Console.ReadLine();
