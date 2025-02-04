@@ -16,6 +16,7 @@ public class Program
         bool isCorrectGuess = false;
         string response;
         const int numberOfGuesses = 5;
+        int numberOfTries = 0;
         Random rng = new Random();
         int randomNumber = rng.Next(0, 10);
 
@@ -24,8 +25,6 @@ public class Program
 
         for (int i = 1; i <= numberOfGuesses; i++)
         {
-
-            
             Console.WriteLine($"\nAttempt {i} of {numberOfGuesses}:");
 
             //convert number to int32
@@ -33,22 +32,25 @@ public class Program
 
             Console.WriteLine($"You have entered: {number}");
 
-            if (number < randomNumber)
+            if (number == randomNumber) 
             {
-                Console.WriteLine("Your number is too low");
+                Console.WriteLine("Your number is correct");
+                break;
             }
-
             else if (number > randomNumber)
             {
                 Console.WriteLine("Your number is too high");
             }
-            else if (number == randomNumber)
+            else if (number < randomNumber)
+            {
 
-                Console.WriteLine("Your guess is correct");
+                Console.WriteLine("Your guess is too low");
+            }
+
+            if (!isCorrectGuess)
+                
+                Console.WriteLine ($"The correct number is {randomNumber}");
             
-
-            //Console.WriteLine($"The correct number is {randomNumber}");
-
         }
     }
 
