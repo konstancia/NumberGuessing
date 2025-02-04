@@ -15,7 +15,7 @@ public class Program
         bool playAgain = true;
         bool isCorrectGuess = false;
         string response;
-        const int numberOfGuesses = 5;
+        const int NUMBER_OF_GUESSES = 5;
         int numberOfTries = 0;
         Random rng = new Random();
         int randomNumber = rng.Next(0, 10);
@@ -23,9 +23,9 @@ public class Program
         Console.WriteLine("This exercise is about number guessing");
         Console.WriteLine(("Please enter a number between 0-10:"));
 
-        for (int i = 1; i <= numberOfGuesses; i++)
+        for (int i = 1; i <= NUMBER_OF_GUESSES; i++)
         {
-            Console.WriteLine($"\nAttempt {i} of {numberOfGuesses}:");
+            Console.WriteLine($"\nAttempt {i} of {NUMBER_OF_GUESSES}:");
 
             //convert number to int32
             int number = Convert.ToInt32(Console.ReadLine());
