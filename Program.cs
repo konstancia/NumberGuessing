@@ -15,7 +15,7 @@ public class Program
         bool playAgain = true;
         bool isCorrectGuess = false;
         string response;
-        int numberOfGuesses = 5;
+        const int numberOfGuesses = 5;
         Random rng = new Random();
         int randomNumber = rng.Next(0, 10);
 
@@ -46,7 +46,7 @@ public class Program
 
                 Console.WriteLine("Your guess is correct");
 
-            Console.WriteLine($"The correct number is {randomNumber}");
+            //Console.WriteLine($"The correct number is {randomNumber}");
 
         }
     }
