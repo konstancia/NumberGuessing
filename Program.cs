@@ -19,13 +19,13 @@ public class Program
         Random rng = new Random();
         int randomNumber = rng.Next(0, 10);
 
-
+        Console.WriteLine("This exercise is about number guessing");
+        Console.WriteLine(("Please enter a number between 0-10:"));
 
         for (int i = 1; i <= numberOfGuesses; i++)
         {
 
-            Console.WriteLine("This exercise is about number guessing");
-            Console.WriteLine(("Please enter a number between 0-10:"));
+            
             Console.WriteLine($"\nAttempt {i} of {numberOfGuesses}:");
 
             //convert number to int32
@@ -45,6 +45,7 @@ public class Program
             else if (number == randomNumber)
 
                 Console.WriteLine("Your guess is correct");
+            
 
             //Console.WriteLine($"The correct number is {randomNumber}");
 
