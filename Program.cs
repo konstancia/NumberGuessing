@@ -74,16 +74,9 @@ public class Program
 }
 
 Console.WriteLine("Thanks for playing!");
+    
 
-        }
-    }
-
-
-
-
-
-
-/* Console.WriteLine("Would you like to play again (Y/N)");
+Console.WriteLine("Would you like to play again (Y/N)");
  response = Console.ReadLine();
  response = response.ToUpper();
 
@@ -99,7 +92,7 @@ Console.WriteLine("Thanks for playing!");
  Console.WriteLine("Thank you for playing");
 }
 }
-}
+
 
 
 
