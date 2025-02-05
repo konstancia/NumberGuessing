@@ -50,7 +50,7 @@ public class Program
                 Console.WriteLine("Your guess is too low");
             }
 
-            int difference = Math.Abs(number - NUMBER_OF_GUESSES);
+            int difference = Math.Abs(randomNumber - number);
 
             if (difference <= 5)
             {
