@@ -17,7 +17,6 @@ public class Program
         const int NUMBER_OF_GUESSES = 5;
         bool playAgain = true;
         bool isCorrectGuess = false;
-        string response;
         int numberOfTries = 0;
         Random rng = new Random();
         int randomNumber = rng.Next(0, MAX_NUMBER);
@@ -75,7 +74,7 @@ public class Program
 
 Console.WriteLine("Thanks for playing!");
     
-
+string response;
 Console.WriteLine("Would you like to play again (Y/N)");
  response = Console.ReadLine();
  response = response.ToUpper();
