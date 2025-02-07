@@ -13,7 +13,7 @@ public class Program
     static void Main(string[] args)
     {
 
-        const int MAX_NUMBER = 100;
+        const int MAX_NUMBER = 99;
         const int NUMBER_OF_GUESSES = 5;
         bool playAgain = true;
         bool isCorrectGuess = false;
