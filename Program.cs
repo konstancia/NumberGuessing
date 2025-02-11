@@ -12,6 +12,7 @@ public class Program
 
     static void Main(string[] args)
     {
+        
 
         const int MAX_NUMBER = 99;
         const int NUMBER_OF_GUESSES = 5;
@@ -20,13 +21,16 @@ public class Program
         int numberOfTries = 0;
         Random rng = new Random();
         int randomNumber = rng.Next(0, MAX_NUMBER);
-
-
+        
+        
         Console.WriteLine("This exercise is about number guessing");
         Console.WriteLine(($"Please enter a number between 0-{MAX_NUMBER}:"));
 
+       
         for (int i = 1; i <= NUMBER_OF_GUESSES; i++)
+            
         {
+            
             Console.WriteLine($"\nAttempt {i} of {NUMBER_OF_GUESSES}:");
 
             //convert number to int32
@@ -67,14 +71,33 @@ public class Program
             Console.WriteLine($"Attempts left: {NUMBER_OF_GUESSES - numberOfTries}");
         }
 
-     if (!isCorrectGuess)
-{
-    Console.WriteLine($"\nGame over! The correct number was {randomNumber}.");
+        if (!isCorrectGuess)
+        {
+            Console.WriteLine($"\nGame over! The correct number was {randomNumber}.");
+        }
+
+        Console.WriteLine("Thanks for playing!");
+
+        
+        while (playAgain) // Loop for restarting the game
+        {
+            //PlayGame(); // Call the game function
+
+            Console.Write("\nDo you want to play again? (yes/no): ");
+            string response = Console.ReadLine().ToLower();
+
+            if (response != "yes" && response != "y")
+            {
+                playAgain = false; // Exit the loop if the user doesn't want to play again
+            }
+        }
+
+        Console.WriteLine("Thanks for playing! Goodbye.");
+    }
 }
 
-Console.WriteLine("Thanks for playing!");
-    
-string response;
+
+/* string response;
 Console.WriteLine("Would you like to play again (Y/N)");
  response = Console.ReadLine();
  response = response.ToUpper();
