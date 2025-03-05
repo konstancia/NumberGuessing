@@ -94,7 +94,10 @@ public class Program
             {
                 playAgain = false; // Exit the loop if the user doesn't want to play again
             }
-            Console.WriteLine(($"Please enter a number between 0-{MAX_NUMBER}:"));
+            else
+            {
+                playAgain = true;
+            }
         }
 
         Console.WriteLine("Thanks for playing! Goodbye.");
