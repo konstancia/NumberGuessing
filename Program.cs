@@ -84,6 +84,8 @@ public class Program
         while (playAgain) // Loop for restarting the game
         {
             //PlayGame(); // Call the game function
+            
+           
 
             Console.Write("\nDo you want to play again? (yes/no): ");
             string response = Console.ReadLine().ToLower();
@@ -92,6 +94,7 @@ public class Program
             {
                 playAgain = false; // Exit the loop if the user doesn't want to play again
             }
+            Console.WriteLine(($"Please enter a number between 0-{MAX_NUMBER}:"));
         }
 
         Console.WriteLine("Thanks for playing! Goodbye.");
