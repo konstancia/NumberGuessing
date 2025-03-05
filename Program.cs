@@ -16,6 +16,8 @@ public class Program
 
         const int MAX_NUMBER = 99;
         const int NUMBER_OF_GUESSES = 5;
+        const int DIFFERENCE_LOW = 5;
+        const int DIFFERENCE_HIGH = 10;
         bool playAgain = true;
         bool isCorrectGuess = false;
         int numberOfTries = 0;
@@ -55,11 +57,11 @@ public class Program
 
             int difference = Math.Abs(randomNumber - number);
 
-            if (difference <= 5)
+            if (difference <= DIFFERENCE_LOW)
             {
                 Console.WriteLine("Very close! You're within 5 of the correct number.");
             }
-            else if (difference <= 10)
+            else if (difference <= DIFFERENCE_HIGH)
             {
                 Console.WriteLine("Close! You're within 10 of the correct number.");
             }
