@@ -59,11 +59,11 @@ public class Program
 
             if (difference <= DIFFERENCE_LOW)
             {
-                Console.WriteLine("Very close! You're within 5 of the correct number.");
+                Console.WriteLine($"Very close! You're within {DIFFERENCE_LOW} of the correct number.");
             }
             else if (difference <= DIFFERENCE_HIGH)
             {
-                Console.WriteLine("Close! You're within 10 of the correct number.");
+                Console.WriteLine($"Close! You're within {DIFFERENCE_HIGH} of the correct number.");
             }
             else
             {
