@@ -32,7 +32,6 @@ public class Program
         for (int i = 1; i <= NUMBER_OF_GUESSES; i++)
             
         {
-            
             Console.WriteLine($"\nAttempt {i} of {NUMBER_OF_GUESSES}:");
 
             //convert number to int32
@@ -54,6 +53,8 @@ public class Program
 
                 Console.WriteLine("Your guess is too low");
             }
+
+            numberOfTries++;
 
             int difference = Math.Abs(randomNumber - number);
 
@@ -77,16 +78,11 @@ public class Program
         {
             Console.WriteLine($"\nGame over! The correct number was {randomNumber}.");
         }
-
-        //Console.WriteLine("Thanks for playing!");
-
         
-        while (playAgain) // Loop for restarting the game
+           while (playAgain) // Loop for restarting the game
         {
             //PlayGame(); // Call the game function
             
-           
-
             Console.Write("\nDo you want to play again? (y/n): ");
             string response = Console.ReadLine().ToLower();
 
