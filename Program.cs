@@ -78,7 +78,7 @@ public class Program
             Console.WriteLine($"\nGame over! The correct number was {randomNumber}.");
         }
 
-        Console.WriteLine("Thanks for playing!");
+        //Console.WriteLine("Thanks for playing!");
 
         
         while (playAgain) // Loop for restarting the game
@@ -87,16 +87,17 @@ public class Program
             
            
 
-            Console.Write("\nDo you want to play again? (yes/no): ");
+            Console.Write("\nDo you want to play again? (y/n): ");
             string response = Console.ReadLine().ToLower();
 
-            if (response != "yes" && response != "y")
+            if (response == "y") 
+            
             {
-                playAgain = false; // Exit the loop if the user doesn't want to play again
+                playAgain = true; // Exit the loop if the user doesn't want to play again
             }
             else
             {
-                playAgain = true;
+                playAgain = false;
             }
         }
 
