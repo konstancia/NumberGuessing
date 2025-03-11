@@ -6,14 +6,10 @@ using System.Security.Cryptography;
 
 namespace NumberGuessing;
 
-
 public class Program
 {
-
     static void Main(string[] args)
     {
-        
-
         const int MAX_NUMBER = 99;
         const int NUMBER_OF_GUESSES = 5;
         const int DIFFERENCE_LOW = 5;
@@ -22,83 +18,85 @@ public class Program
         bool isCorrectGuess = false;
         int numberOfTries = 0;
         Random rng = new Random();
-        int randomNumber = rng.Next(0, MAX_NUMBER);
-        
-        
-        Console.WriteLine("This exercise is about number guessing");
-        Console.WriteLine(($"Please enter a number between 0-{MAX_NUMBER}:"));
-
-       
-        for (int i = 1; i <= NUMBER_OF_GUESSES; i++)
-            
+        while (playAgain)
         {
-            Console.WriteLine($"\nAttempt {i} of {NUMBER_OF_GUESSES}:");
+            int randomNumber = rng.Next(0, MAX_NUMBER);
 
-            //convert number to int32
-            int number = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine($"You have entered: {number}");
+            Console.WriteLine("This exercise is about number guessing");
 
-            if (number == randomNumber)
+            Console.WriteLine(($"Please enter a number between 0-{MAX_NUMBER}:"));
+
+
+            for (int i = 1; i <= NUMBER_OF_GUESSES; i++)
+
             {
-                Console.WriteLine("Your number is correct");
-                break;
+                Console.WriteLine($"\nAttempt {i} of {NUMBER_OF_GUESSES}:");
+
+                //convert number to int32
+                int number = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine($"You have entered: {number}");
+
+                if (number == randomNumber)
+                {
+                    Console.WriteLine("Your number is correct");
+                    break;
+                }
+                else if (number > randomNumber)
+                {
+                    Console.WriteLine("Your number is too high");
+                }
+                else if (number < randomNumber)
+                {
+                    Console.WriteLine("Your guess is too low");
+                }
+
+                numberOfTries++;
+
+                int difference = Math.Abs(randomNumber - number);
+
+                if (difference <= DIFFERENCE_LOW)
+                {
+                    Console.WriteLine($"Very close! You're within {DIFFERENCE_LOW} of the correct number.");
+                }
+                else if (difference <= DIFFERENCE_HIGH)
+                {
+                    Console.WriteLine($"Close! You're within {DIFFERENCE_HIGH} of the correct number.");
+                }
+                else
+                {
+                    Console.WriteLine("Not close! Keep trying.");
+                }
+
+                Console.WriteLine($"Attempts left: {NUMBER_OF_GUESSES - numberOfTries}");
             }
-            else if (number > randomNumber)
-            {
-                Console.WriteLine("Your number is too high");
-            }
-            else if (number < randomNumber)
-            {
 
-                Console.WriteLine("Your guess is too low");
+            if (!isCorrectGuess)
+            {
+                Console.WriteLine($"\nGame over! The correct number was {randomNumber}.");
             }
 
-            numberOfTries++;
 
-            int difference = Math.Abs(randomNumber - number);
+            //while (playAgain) // Loop for restarting the game
+            {
+                //PlayGame(); // Call the game function
 
-            if (difference <= DIFFERENCE_LOW)
-            {
-                Console.WriteLine($"Very close! You're within {DIFFERENCE_LOW} of the correct number.");
-            }
-            else if (difference <= DIFFERENCE_HIGH)
-            {
-                Console.WriteLine($"Close! You're within {DIFFERENCE_HIGH} of the correct number.");
-            }
-            else
-            {
-                Console.WriteLine("Not close! Keep trying.");
-            }
+                Console.Write("\nDo you want to play again? (y/n): ");
+                string response = Console.ReadLine().ToLower();
 
-            Console.WriteLine($"Attempts left: {NUMBER_OF_GUESSES - numberOfTries}");
-        }
+                if (response == "y")
 
-        if (!isCorrectGuess)
-        {
-            Console.WriteLine($"\nGame over! The correct number was {randomNumber}.");
-        }
-        
-           while (playAgain) // Loop for restarting the game
-        {
-            //PlayGame(); // Call the game function
-            
-            Console.Write("\nDo you want to play again? (y/n): ");
-            string response = Console.ReadLine().ToLower();
-
-            if (response == "y") 
-            
-            {
-                playAgain = true; // Exit the loop if the user doesn't want to play again
-            }
-            else
-            {
-                playAgain = false;
+                {
+                    playAgain = true; // Exit the loop if the user doesn't want to play again
+                }
+                else
+                {
+                    playAgain = false;
+                }
             }
         }
 
         Console.WriteLine("Thanks for playing! Goodbye.");
     }
 }
-
-
