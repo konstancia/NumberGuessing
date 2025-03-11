@@ -14,6 +14,7 @@ public class Program
         const int NUMBER_OF_GUESSES = 5;
         const int DIFFERENCE_LOW = 5;
         const int DIFFERENCE_HIGH = 10;
+        string answer = "yes";
         bool playAgain = true;
         bool isCorrectGuess = false;
         int numberOfTries = 0;
@@ -82,10 +83,10 @@ public class Program
             {
                 //PlayGame(); // Call the game function
 
-                Console.Write("\nDo you want to play again? (y/n): ");
+                Console.Write("\nDo you want to play again? (yes/no): ");
                 string response = Console.ReadLine().ToLower();
 
-                if (response == "y")
+                if (response == answer)
 
                 {
                     playAgain = true; // Exit the loop if the user doesn't want to play again
